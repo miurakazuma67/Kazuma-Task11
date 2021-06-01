@@ -21,8 +21,6 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
     
     @IBOutlet private weak var tableView: UITableView!
     
-    var closure: ((String) -> Void)?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(PrefectureTableViewCell.nib, forCellReuseIdentifier: PrefectureTableViewCell.identifier)

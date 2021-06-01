@@ -16,12 +16,11 @@ class FirstViewController: UIViewController {
     @IBAction func exitCancel(_ segue: UIStoryboardSegue) {
     }
     
-    
     @IBAction func enter(_ sender: Any) {
         let second = storyboard?.instantiateViewController(withIdentifier: "Second") as? SecondViewController
-               if let second = second {
-                   present(second, animated: true, completion: nil)
-               }
+        if let second = second {
+            present(second, animated: true, completion: nil)
+        }
     }
     
     func change() {
