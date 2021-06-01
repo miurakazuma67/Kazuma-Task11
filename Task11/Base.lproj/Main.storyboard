@@ -16,8 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="91" translatesAutoresizingMaskIntoConstraints="NO" id="vSa-Oc-EXE">
-                                <rect key="frame" x="40" y="74" width="334.5" height="30"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="71" translatesAutoresizingMaskIntoConstraints="NO" id="vSa-Oc-EXE">
+                                <rect key="frame" x="57" y="74" width="300" height="30"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="都道府県" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b2I-w2-mhA">
                                         <rect key="frame" x="0.0" y="0.0" width="69.5" height="30"/>
@@ -26,13 +26,13 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="未選択" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lsD-Lu-UK0">
-                                        <rect key="frame" x="160.5" y="0.0" width="52" height="30"/>
+                                        <rect key="frame" x="143.5" y="0.0" width="52" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="24d-LY-eIm">
-                                        <rect key="frame" x="303.5" y="0.0" width="31" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="24d-LY-eIm">
+                                        <rect key="frame" x="269" y="0.0" width="31" height="30"/>
                                         <state key="normal" title="入力"/>
                                         <connections>
                                             <action selector="enter:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pP7-Of-KFK"/>
@@ -40,7 +40,7 @@
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="334.5" id="310-sy-VVJ"/>
+                                    <constraint firstAttribute="width" constant="300" id="310-sy-VVJ"/>
                                     <constraint firstAttribute="height" constant="30" id="HER-XG-eGY"/>
                                 </constraints>
                             </stackView>

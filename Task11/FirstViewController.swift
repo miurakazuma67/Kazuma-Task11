@@ -20,15 +20,8 @@ class FirstViewController: UIViewController {
     @IBAction func enter(_ sender: Any) {
         let second = storyboard?.instantiateViewController(withIdentifier: "Second") as? SecondViewController
                if let second = second {
-                second.closure = {(name: String) -> Void in
-                    self.selectedPrefectureName = name
-                   }
                    present(second, animated: true, completion: nil)
                }
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        change()
     }
     
     func change() {

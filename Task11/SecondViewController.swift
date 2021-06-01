@@ -41,11 +41,11 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let first = storyboard?.instantiateViewController(withIdentifier: "First") as? FirstViewController
-               if let first = first {
-                closure(prefectures[indexPath.row])
-                dismiss(animated: true, completion: nil)
-               }
+        if let first = self.presentingViewController as? FirstViewController {
+            first.selectedPrefectureName = prefectures[indexPath.row]
+            first.change()
+        }
+        dismiss(animated: true, completion: nil)
     }
 }
 
