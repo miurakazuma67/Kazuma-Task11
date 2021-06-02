@@ -18,8 +18,22 @@ private let prefectures = [
 ]
 
 class SecondViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+
+    private var didSelect: (String) -> Void = { _ in }
+    private var didCancel: () -> Void = {}
     
     @IBOutlet private weak var tableView: UITableView!
+
+    static func instantiate(didSelect: @escaping (String) -> Void, didCancel: @escaping () -> Void = {}) -> SecondViewController {
+
+        let second = UIStoryboard(name: "Second", bundle: nil)
+            .instantiateInitialViewController() as! SecondViewController
+
+        second.didSelect = didSelect
+        second.didCancel = didCancel
+
+        return second
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,12 +53,10 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let first = self.presentingViewController as? FirstViewController {
-            first.selectedPrefectureName = prefectures[indexPath.row]
-            first.change()
-        }
-        dismiss(animated: true, completion: nil)
+        didSelect(prefectures[indexPath.row])
+    }
+
+    @IBAction func didTapCancelButton(_ sender: Any) {
+        didCancel()
     }
 }
-
-
