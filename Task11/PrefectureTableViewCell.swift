@@ -9,7 +9,7 @@ import UIKit
 
 class PrefectureTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var prefectureLabel: UILabel!
+    @IBOutlet private weak var prefectureLabel: UILabel!
     
     static var identifier: String { String(describing: self) }
     static var nib: UINib { UINib(nibName: String(describing: self), bundle: nil) }
