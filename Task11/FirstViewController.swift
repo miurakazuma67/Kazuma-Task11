@@ -9,22 +9,22 @@ import UIKit
 
 class FirstViewController: UIViewController {
     
-    var selectedPrefectureName: String = "未選択"
-    
     @IBOutlet private weak var changeLabel: UILabel!
     
-    @IBAction func exitCancel(_ segue: UIStoryboardSegue) {
-    }
-    
     @IBAction func enter(_ sender: Any) {
-        let second = storyboard?.instantiateViewController(withIdentifier: "Second") as? SecondViewController
-        if let second = second {
-            present(second, animated: true, completion: nil)
-        }
+        let second = SecondViewController.instantiate(
+            didSelect: { [weak self] in
+                self?.changeLabel.text = $0
+                self?.dismiss(animated: true)
+            },
+            didCancel: { [weak self] in
+                self?.dismiss(animated: true)
+            }
+        )
+        
+        let nav = UINavigationController(rootViewController: second)
+        present(nav, animated: true)
     }
     
-    func change() {
-        self.changeLabel?.text = selectedPrefectureName
-    }
 }
 
