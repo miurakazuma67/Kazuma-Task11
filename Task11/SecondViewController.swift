@@ -17,12 +17,15 @@ private let prefectures = [
     "熊本県","大分県","宮崎県","鹿児島県","沖縄県"
 ]
 
-class SecondViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+final class SecondViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    //都道府県が選択された時と、キャンセルボタンがタップされた時の処理をクロージャとして保持
     private var didSelect: (String) -> Void = { _ in }
     private var didCancel: () -> Void = {}
     
     @IBOutlet private weak var tableView: UITableView!
+    
+    //画面を生成し、イベント発生時のクロージャを設定するまでを1つのメソッドに集約、secondVCのインスタンス作成時に非同期処理を実行するクロージャを引数として渡し、スコープ外でも保持できるようにしておく
     
     static func instantiate(didSelect: @escaping (String) -> Void, didCancel: @escaping () -> Void = {}) -> SecondViewController {
         

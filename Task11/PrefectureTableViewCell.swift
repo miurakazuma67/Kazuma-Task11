@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PrefectureTableViewCell: UITableViewCell {
+final class PrefectureTableViewCell: UITableViewCell {
 
     @IBOutlet private weak var prefectureLabel: UILabel!
     
